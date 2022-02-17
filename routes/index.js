@@ -62,10 +62,15 @@ router.get('/deletar/:id', (req, res, next)=>{
 
 router.get('/editar/:id',(req, res)=>{
   id=req.params.id
-  res.render('editar')
+  Dev.findOne({where: {id}}).then(dev =>{
+    res.render('editar', {form: dev})
+  }).catch(erro =>{
+    res.redirect('/')
+  })
 })
 
 router.post('/editar',(req, res)=>{
+  const {id} = req.params
   Dev.update({
       nome: req.body.nome,
       email: req.body.email,
