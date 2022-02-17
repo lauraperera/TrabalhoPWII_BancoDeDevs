@@ -1,7 +1,7 @@
 const Sequelize = require("sequelize")
 
 //conexão com o banco de dados
-const sequelize = new Sequelize('AulaPWI','postgres','admin ',{
+const sequelize = new Sequelize('TrabalhoPWII','postgres','admin',{
     host: "localhost",  
     dialect: "postgres"   
 }) 

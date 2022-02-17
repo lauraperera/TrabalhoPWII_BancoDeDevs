@@ -60,7 +60,7 @@ router.get('/deletar/:id', (req, res, next)=>{
   res.redirect('/listacadastro')  
 })
 
-router.get('/editar/:id',(req, res)=>{
+router.get('/editar/:id',(req, res, next)=>{
   id=req.params.id
   Dev.findOne({where: {id}}).then(dev =>{
     res.render('editar', {form: dev})
@@ -69,7 +69,7 @@ router.get('/editar/:id',(req, res)=>{
   })
 })
 
-router.post('/editar',(req, res)=>{
+router.post('/editar/:id',(req, res, next)=>{
   const {id} = req.params
   Dev.update({
       nome: req.body.nome,
