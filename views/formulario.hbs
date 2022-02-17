@@ -1,0 +1,57 @@
+{{#each erros}}
+    <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+
+{{/each}}
+
+<h1>Cadastrar Dev</h1>
+
+<form action="/cadastrar" method="POST">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Nome</label>
+      <input type="text" class="form-control" name="nome" placeholder="Nome">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Endereço de email</label>
+      <input type="email" class="form-control" name="email" placeholder="nome@exemplo.com">
+    </div>
+  
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Qual sua área de atuação?</label>
+    <select class="form-control" name="area">
+        <option selected>Escolher...</option>
+            <option value="Front-end">Front-end</option>
+            <option value="Back-end">Back-end</option>
+            <option value="Fullstack">Fullstack</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect2">Tecnologias que utiliza</label>
+      <select multiple class="form-control" name="tecnologias">
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JavaScript</option>
+        <option>C</option>
+        <option>Phyton</option>
+        <option>Php</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Qual a sua senioridade?</label>
+      <select class="form-control" name="senioridade">
+        <option>Junior</option>
+        <option>Pleno</option>
+        <option>Senior</option>
+      </select>
+    </div>
+
+     <div class="form-group">
+      <label for="exampleFormControlTextarea1">Fale um pouco sobre sua experiência</label>
+      <textarea class="form-control" name="experiencia" rows="3"></textarea>
+    </div>
+
+  <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+</form>
