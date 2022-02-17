@@ -39,7 +39,7 @@ router.post('/cadastrar', (req, res, next)=>{
                 email: req.body.email,
                 area: req.body.area,
                 senioridade: req.body.senioridade,
-                tecnologias: req.body.tecnologias.join(', '),
+                tecnologias: typeof req.body.tecnologias === 'string' ? req.body.tecnologias : (req.body.tecnologias || []).join(', '),
                 experiencia: req.body.experiencia,
             }).then(()=>{
                 res.cookie("dadosDev", req.body.email)
@@ -76,7 +76,7 @@ router.post('/editar/:id',(req, res, next)=>{
       email: req.body.email,
       area: req.body.area,
       senioridade: req.body.senioridade,
-      tecnologias: req.body.tecnologias,
+      tecnologias: typeof req.body.tecnologias === 'string' ? req.body.tecnologias : (req.body.tecnologias || []).join(', '),
       experiencia: req.body.experiencia,
   }, {
       where: {id: id},
