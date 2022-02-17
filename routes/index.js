@@ -15,7 +15,7 @@ router.get('/listacadastro', (req, res, next)=>{
 })
 
 router.get('/formulario', (req, res, next)=>{
-  res.render('formulario')
+  res.render('formulario', {error_msg: req.flash("error_msg")})
 })
 
 router.post('/cadastrar', (req, res, next)=>{
